@@ -12,9 +12,10 @@ namespace DemoMVC.Controllers
         //
         // GET: /Employee/
 
-        public ActionResult Details()
+        public ActionResult Details(int id)
         {
-            
+            EmployeeContext employeeContext = new EmployeeContext();
+            Employee employee = employeeContext.Employees.Single(x => x.EmployeeId == id);
 
             return View(employee);
         }

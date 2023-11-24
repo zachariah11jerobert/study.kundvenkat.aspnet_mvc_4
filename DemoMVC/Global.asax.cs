@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -14,6 +15,7 @@ namespace DemoMVC
     {
         protected void Application_Start()
         {
+            Database.SetInitializer<DemoMVC.Models.EmployeeContext>(null);
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
