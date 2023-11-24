@@ -12,6 +12,14 @@ namespace DemoMVC.Controllers
         //
         // GET: /Employee/
 
+        public ActionResult Index()
+        {
+            EmployeeContext employeeContext = new EmployeeContext();
+            List<Employee> employees = employeeContext.Employees.ToList();
+
+            return View(employees);
+        }
+
         public ActionResult Details(int id)
         {
             EmployeeContext employeeContext = new EmployeeContext();

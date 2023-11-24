@@ -1,0 +1,23 @@
+﻿@model IEnumerable<DemoMVC.Models.Employee>
+
+@using DemoMVC.Models;
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div style="font-family:Arial">
+    <h2>Employee List</h2>
+
+    <ul>
+        @foreach (Employee employee in @Model)
+        {
+            <li>
+                @*<a href="/Employee/Details/@employee.EmployeeId">@employee.Name</a>*@
+
+                @Html.ActionLink(employee.Name, "Details", new { id = employee.EmployeeId })
+            </li>
+        }
+    </ul>
+</div>
+
