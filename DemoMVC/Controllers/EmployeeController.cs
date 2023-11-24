@@ -14,13 +14,7 @@ namespace DemoMVC.Controllers
 
         public ActionResult Details()
         {
-            Employee employee = new Employee()
-            {
-                EmployeeId = 101,
-                Name = "John",
-                Gender = "Male",
-                City = "London"
-            };
+            
 
             return View(employee);
         }
